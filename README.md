@@ -134,7 +134,8 @@ Download the repository, unzip the folder and open it on a terminal, then run `p
 ## Usage
 
 Read all the descriptions and click on the buttons to proceed within the three pages of the program. 
-Hoovering over a button makes a tooltip appear.
+Hoovering over a button makes a tooltip appear.\
+Use the sudoku photos in the `sudoku_test_images` folder or your own images to try the program.
 
 ### First page
 
