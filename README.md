@@ -1,4 +1,4 @@
-<img src="icon_and_demo_images/sudoku_icon.png" align="right" width="100" height="100"/>
+<img src="icon_and_demo_images/sudoku_icon.png" align="right" width="100" height="auto"/>
 
 # Sudoku-solver-GUI-CNN [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 > Solve a sudoku from its photo
@@ -49,36 +49,36 @@ and then call its function to save the new model.
 Before being able to identify the numbers present in a sudoku's photo, it is necessary to preprocess the image.\
 First of all, the image is resized, then gaussian blurring is introduced to reduce noise.
 
-<img src="icon_and_demo_images/steps/blur.PNG" align="center" width="200" height="250"/>
+<img src="icon_and_demo_images/steps/blur.PNG" align="center" width="200" height="auto"/>
 
 Then, an adaptive gaussian thresholding is applied to obtain a binary image. 
 Such algorithm is able to apply a different threshold for different parts of the picture depending on their illumination.
 
-<img src="icon_and_demo_images/steps/thresh.PNG" align="center" width="200" height="250"/>
+<img src="icon_and_demo_images/steps/thresh.PNG" align="center" width="200" height="auto"/>
 
 Subsequently, the image is eroded and dilatated to further eliminate noise. It is then inverted to make the contour search feasible.
 
-<img src="icon_and_demo_images/steps/erosion.PNG" align="center" width="200" height="250"/>
-<img src="icon_and_demo_images/steps/dilatation.PNG" align="center" width="200" height="250"/>
-<img src="icon_and_demo_images/steps/invert.PNG" align="center" width="200" height="250"/>
+<img src="icon_and_demo_images/steps/erosion.PNG" align="center" width="200" height="auto"/>
+<img src="icon_and_demo_images/steps/dilatation.PNG" align="center" width="200" height="auto"/>
+<img src="icon_and_demo_images/steps/invert.PNG" align="center" width="200" height="auto"/>
 
 After these image manipulations, the program tries to identify the largest square contour, i.e. the one that contains the sudoku grid.
 
-<img src="icon_and_demo_images/steps/contour.PNG" align="center" width="200" height="250"/>
+<img src="icon_and_demo_images/steps/contour.PNG" align="center" width="200" height="auto"/>
 
 This square is then appropriately cropped and the final image contains just the 9x9 sudoku grid.
 
-<img src="icon_and_demo_images/steps/grid.PNG" align="center" width="252" height="252"/>
+<img src="icon_and_demo_images/steps/grid.PNG" align="center" width="252" height="auto"/>
 
 Afterwards, this image is sliced to separate each cell, as the program needs to work on 28x28 images to recognize the digits.
 
-<img src="icon_and_demo_images/steps/cell.PNG" align="center" width="84" height="84"/>
+<img src="icon_and_demo_images/steps/cell.PNG" align="center" width="84" height="auto"/>
 
 The program tries to recognize, cell by cell, if the square is empty or if it contains a number. 
 In the latter case, it will be able to identify which number, but first the digit is isolated and centered in the 28x28 image.
 
-<img src="icon_and_demo_images/steps/cell_cleaned.PNG" align="center" width="84" height="84"/>
-<img src="icon_and_demo_images/steps/cell_mnist.PNG" align="center" width="84" height="84"/>
+<img src="icon_and_demo_images/steps/cell_cleaned.PNG" align="center" width="84" height="auto"/>
+<img src="icon_and_demo_images/steps/cell_mnist.PNG" align="center" width="84" height="auto"/>
 
 After the cell's images are processed, their digits are recognized using one of the two trained models and the values are put into an array.
 
@@ -145,7 +145,7 @@ puzzles that have not yet been solved. The second model is a CNN trained on a da
 by the union of the first dataset and the MNIST handwritten digits dataset. The second model can be used to recognize half-solved sudoku puzzles 
 with handwritten digits in addition to printed ones.
 
-<img src="icon_and_demo_images/page_1.PNG" align="center" width="800" height="432"/>
+<img src="icon_and_demo_images/page_1.PNG" align="center" width="800" height="auto"/>
 
 ### Second page
 
@@ -153,13 +153,13 @@ In the second page, it is possible to upload an image of a sudoku and recognize 
 Any number can be modified just by clicking on the cell whose digit needs to be changed.
 This function can be useful in cases of wrong recognition or just to try different puzzles by changing some digits.
 
-<img src="icon_and_demo_images/page_2.PNG" align="center" width="800" height="432"/>
+<img src="icon_and_demo_images/page_2.PNG" align="center" width="800" height="auto"/>
 
 ### Third page
 
 In the third page, it is possible to obtain the sudoku puzzle's solution, only if existing.
 
-<img src="icon_and_demo_images/page_3.PNG" align="center" width="800" height="432"/>
+<img src="icon_and_demo_images/page_3.PNG" align="center" width="800" height="auto"/>
 
 ## Acknowledgements
 
